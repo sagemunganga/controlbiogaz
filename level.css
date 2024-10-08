@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #baafaf;
+}
+
+.container {
+    text-align: center;
+}
+.container h1 {
+    font-size: 1.2;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.vase {
+    width: 400px;
+    height: 600px;
+    background-color: #878282;
+    border-radius: 50px 50px 0 0;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+}
+
+.fluid {
+    width: 100%;
+    background-color: #8f340d;
+    position: absolute;
+    bottom: 0;
+    transition: height 2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white ;
+}
+.fluid-level {
+    position:absolute;
+}
