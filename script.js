@@ -28,22 +28,21 @@ const percentage = document.querySelectorAll('.percentage p');
 const database = firebase.database();
 // Référence au groupe de valeurs "paramètres" dans la base de données
 const parametresRef = database.ref('parametres');
+const testRef = database.ref('test');
 
 // Lire la valeur de température en temps réel à partir du groupe de valeurs "paramètres"
-parametresRef.child('temperature').on('value', (snapshot) => {
+testRef.child('temperatura').on('value', (snapshot) => {
     const temperature = snapshot.val();
-    const progress1 = (temperature * 100)/45 ;
-    const interprogress1 = parseInt(progress1);
     document.getElementById('temp').innerText = temperature + " °C";
-    document.getElementById('tempro').innerText = interprogress1 + "%";
 });
-parametresRef.child('ph').on('value', (snapshot) => {
+testRef.child('pH').on('value', (snapshot) => {
    const phm = snapshot.val();
    document.getElementById('phm').innerText = phm ;
  });
- parametresRef.child('humidity').on('value', (snapshot) => {
+ testRef.child('humiditee').on('value', (snapshot) => {
    const humidite = snapshot.val();
    document.getElementById('humidite').innerText = humidite + "%";
+  
  });
  parametresRef.child('tempssejour').on('value', (snapshot) => {
    const ts = snapshot.val();
@@ -51,7 +50,7 @@ parametresRef.child('ph').on('value', (snapshot) => {
  });
  parametresRef.child('agitation').on('value', (snapshot) => {
    const agit = snapshot.val();
-   document.getElementById('brass').innerText = agit +"tr/min" ;
+   document.getElementById('brass').innerText = agit ;
  });
  parametresRef.child('pression').on('value', (snapshot) => {
    const press = snapshot.val();
@@ -131,10 +130,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Référence à la base de données Firebase
-    const parametresRef = database.ref('parametres');
+    const testRef = database.ref('test');
 
     // Écoute des changements de la température dans Firebase
-    parametresRef.child('temperature').on('value', (snapshot) => {
+    testRef.child('temperatura').on('value', (snapshot) => {
         const temperature = snapshot.val();
         const progress1 = (temperature * 100) / 45;
         const interprogress1 = parseInt(progress1);
@@ -146,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Écoute des changements de l'humidité dans Firebase
-    parametresRef.child('humidity').on('value', (snapshot) => {
-        const humidite= snapshot.val();
+    testRef.child('humiditee').on('value', (snapshot) => {
+        const humidite = snapshot.val();
         const interprogress2 = parseInt(humidite);
         document.getElementById('percentage').innerText = interprogress2 + "%";
 
@@ -157,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Écoute des changements du pH dans Firebase
-    parametresRef.child('ph').on('value', (snapshot) => {
+    testRef.child('pH').on('value', (snapshot) => {
         const phm = snapshot.val();
-        const progress3 = (phm* 100) / 14;
+        const progress3 = (phm * 100) / 14;
         const interprogress3 = parseInt(progress3);
         document.getElementById('phpro').innerText = interprogress3 + "%";
 

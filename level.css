@@ -5,24 +5,25 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #baafaf;
+    background-color: #1b1a1a;
 }
 
 .container {
     text-align: center;
 }
-.container h1 {
-    font-size: 1.2;
-    font-weight: 300;
+.container h3 {
+    font-size: 0.7;
+    font-weight: 100;
     font-family: 'Courier New', Courier, monospace;
+    color: whitesmoke;
 
 }
 
 .vase {
-    width: 400px;
-    height: 600px;
+    width: 200px;
+    height: 450px;
     background-color: #878282;
-    border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 50px 50px ;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
@@ -30,7 +31,7 @@ body {
 
 .fluid {
     width: 100%;
-    background-color: #8f340d;
+    background-color: #5582e2;
     position: absolute;
     bottom: 0;
     transition: height 2s ease;
