@@ -39,7 +39,7 @@ testRef.child('pH').on('value', (snapshot) => {
    const phm = snapshot.val();
    document.getElementById('phm').innerText = phm ;
  });
- testRef.child('humiditee').on('value', (snapshot) => {
+ parametresRef.child('humidity').on('value', (snapshot) => {
    const humidite = snapshot.val();
    document.getElementById('humidite').innerText = humidite + "%";
   
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Écoute des changements de l'humidité dans Firebase
-    testRef.child('humiditee').on('value', (snapshot) => {
+    parametresRef.child('humidity').on('value', (snapshot) => {
         const humidite = snapshot.val();
         const interprogress2 = parseInt(humidite);
         document.getElementById('percentage').innerText = interprogress2 + "%";
